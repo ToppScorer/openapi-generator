@@ -11,6 +11,8 @@ These options may be applied as additional-properties (cli) or configOptions (pl
 |additionalModelTypeAnnotations|Additional annotations for model type(class level annotations). List separated by semicolon(;) or new line (Linux or Windows)| |null|
 |allowUnicodeIdentifiers|boolean, toggles whether unicode identifiers are allowed in names or not, default is false| |false|
 |apiFirst|Generate the API from the OAI spec at server compile time (API first approach)| |false|
+|apiNamePrefix|Prefix that will be prepended to all API names ('tags'). Default: empty string. e.g. Test =&gt; TestPetApi.| |null|
+|apiNameSuffix|Suffix that will be appended to all API names ('tags'). Default: Api. e.g. Pet =&gt; PetApi.| |null|
 |apiPackage|package for generated api classes| |org.openapitools.api|
 |artifactDescription|artifact description in generated pom.xml| |OpenAPI Java|
 |artifactId|artifactId in generated pom.xml. This also becomes part of the generated library's filename| |openapi-spring|
