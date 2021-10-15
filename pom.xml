@@ -12,7 +12,7 @@
     <!-- RELEASE_VERSION -->
     <version>5.3.0-DMB</version>
     <!-- /RELEASE_VERSION -->
-    <url>https://github.com/openapitools/openapi-generator</url>
+    <url>https://gitlab.com/drivemybox/openapi-generator</url>
     <scm>
         <connection>scm:git:https://gitlab.com/drivemybox/openapi-generator.git</connection>
         <developerConnection>scm:git:https://gitlab.com/drivemybox/openapi-generator.git</developerConnection>
@@ -67,12 +67,12 @@
     </issueManagement>
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>drivemybox-gitlab-maven</id>
+            <url>${gitlab.repository.url}</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>drivemybox-gitlab-maven</id>
+            <url>${gitlab.repository.url}</url>
         </repository>
     </distributionManagement>
     <licenses>
@@ -1536,6 +1536,10 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>drivemybox-gitlab-maven</id>
+            <url>https://gitlab.com/api/v4/groups/drivemybox/-/packages/maven</url>
+        </repository>
     </repositories>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -1548,6 +1552,8 @@
         <diffutils.version>1.3.0</diffutils.version>
         <generex.version>1.0.2</generex.version>
         <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
+        <gitlab.project.id>30452917</gitlab.project.id>
+        <gitlab.repository.url>https://gitlab.com/api/v4/projects/${gitlab.project.id}/packages/maven</gitlab.repository.url>
         <groovy.version>3.0.9</groovy.version>
         <guava.version>30.1.1-jre</guava.version>
         <handlebars-java.version>4.2.1</handlebars-java.version>
