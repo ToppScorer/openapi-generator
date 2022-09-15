@@ -1,0 +1,15 @@
+# ================================================
+# List of env variables can be found on CONFLUENCE
+# ================================================
+variables:
+  MAVEN_OPTS: '-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true'
+  MAVEN_CLI_OPTS: '-s .m2/settings.xml --batch-mode'
+
+stages:
+  - build_and_deploy
+
+build_and_deploy:
+  stage: build_and_deploy
+  image: openjdk:11.0.10-slim
+  script:
+    - ./mvnw deploy $MAVEN_CLI_OPTS
